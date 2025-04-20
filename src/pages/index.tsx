@@ -1,4 +1,5 @@
 import { Box, Button, Center, HStack, Heading } from "@chakra-ui/react";
+import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Home() {
@@ -10,10 +11,11 @@ export default function Home() {
         {session ? (
           <Box>
             <Heading>Hi {session.user?.name}</Heading>
-            <Center marginTop={"5"}>
-              <Button onClick={() => signOut()} variant={"subtle"}>
+            <Center marginTop={"5"} display={"flex"} flexDir={"column"}>
+              <Button mb="2" onClick={() => signOut()} variant={"subtle"}>
                 Signout
               </Button>
+              <Link href="/manage">Manage Videos</Link>
             </Center>
           </Box>
         ) : (
