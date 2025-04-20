@@ -8,7 +8,7 @@ import { authOptions } from "./auth/[...nextauth]";
 const handleGet = async (req: NextApiRequest, res: NextApiResponse) => {
   const session = await getServerSession(req, res, authOptions);
 
-  //   @ts-ignore
+  //@ts-expect-error: might be not accessible
   const accessToken = session?.accessToken;
 
   if (!accessToken) {
@@ -60,7 +60,7 @@ const handleGet = async (req: NextApiRequest, res: NextApiResponse) => {
 const handlePost = async (req: NextApiRequest, res: NextApiResponse) => {
   const session = await getServerSession(req, res, authOptions);
 
-  //   @ts-ignore
+  //   @ts-expect-error: might be not accessible
   const accessToken = session?.accessToken;
 
   if (!accessToken) {

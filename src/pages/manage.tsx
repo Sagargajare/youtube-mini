@@ -26,7 +26,7 @@ const Manage = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [setVideos]);
 
   return (
     <>
@@ -65,6 +65,8 @@ const Manage = () => {
                       height: "100%",
                       objectFit: "cover",
                     }}
+                    width={500}
+                    height={380}
                   />
                 </Center>
 

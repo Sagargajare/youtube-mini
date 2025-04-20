@@ -7,7 +7,6 @@ import {
   Portal,
   Textarea,
   VStack,
-  useDisclosure,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { toaster } from "@/components/ui/toaster";

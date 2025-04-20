@@ -17,12 +17,14 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     async jwt({ token, account }: { token: JWT; account?: any }) {
       if (account) {
         token.accessToken = account.access_token;
       }
       return token;
     },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     async session({ session, token }: { session: any; token: JWT }) {
       session.accessToken = token.accessToken;
       return session;
